@@ -1,27 +1,16 @@
-import React, { Fragment } from 'react';
-import { Home, ThreeD } from './components';
-import {
-	BrowserRouter as Router,
-	Route,
-	Switch,
-	Redirect,
-} from 'react-router-dom';
+import React from "react";
+import Header from "./components/Header";
+import Result2D from "./components/Result2D";
+import Result3D from "./components/Result3D";
 
-// alert('2D/3D ကို လက်ရှိကြည့်ရှု၍ မရနိုင်သေးပါ။ ပြင်ဆင်နေသောကြောင့်ဖြစ်သည်။');
-
-const App = () => {
-	return (
-		<Fragment>
-			<Router>
-				<Switch>
-					<Route exact path="/" component={Home} />
-					<Route path="/3d" component={ThreeD} />
-					{/* <Route exact path="*" component={Home} /> */}
-					<Redirect from="*" to="/" />
-				</Switch>
-			</Router>
-		</Fragment>
-	);
-};
+function App() {
+  return (
+    <div>
+      <Header />
+      <Result2D />
+      <Result3D />
+    </div>
+  );
+}
 
 export default App;
